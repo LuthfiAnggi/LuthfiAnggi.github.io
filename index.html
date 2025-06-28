@@ -335,6 +335,25 @@
             overflow: hidden;
         }
         
+        /* FIXED: Image styling for proper fit */
+        .memory-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .memory-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Fallback gradient for cards without images */
+        .memory-image.no-image {
+            background: linear-gradient(135deg, #ff6b9d, #c44569, #8e44ad);
+        }
+        
         .memory-image::before {
             content: '';
             position: absolute;
@@ -344,6 +363,8 @@
             bottom: 0;
             background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
             animation: shimmer-slow 4s ease-in-out infinite;
+            z-index: 1;
+            pointer-events: none;
         }
         
         @keyframes shimmer-slow {
@@ -498,6 +519,14 @@
                 gap: 1.5rem;
             }
             
+            .memory-card {
+                padding: 1.5rem;
+            }
+            
+            .memory-image {
+                height: 200px;
+            }
+            
             .message-container {
                 padding: 2rem;
             }
@@ -550,7 +579,7 @@
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Happy Birthday</h1>
-            <p class="hero-subtitle">Untuk orang tersayang yang membuat hidup ini bermakna</p>
+            <p class="hero-subtitle">Teruntuk Eva Mega Puspita my dear lovely</p>
             <button class="cta-button" onclick="document.getElementById('cake').scrollIntoView()">
                 Mulai Perayaan ✨
             </button>
@@ -573,24 +602,75 @@
         <h2 class="section-title">Kenangan Terindah</h2>
         <div class="memory-grid">
             <div class="memory-card">
-                <div class="memory-image">📸</div>
-                <h3 class="memory-title">Pertemuan Pertama</h3>
-                <p class="memory-text">Moment ketika mata kita bertemu untuk pertama kali. Waktu seakan berhenti dan aku tahu hidup akan berubah.</p>
+                <div class="memory-image">
+                    <img src="images/foto1.jpg" alt="Foto pertama kita" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">Pertama Kali Send a Picture</h3>
+                <p class="memory-text">so cute sekali sih maba UB satu ini hihhhhh</p>
             </div>
+
             <div class="memory-card">
-                <div class="memory-image">💕</div>
-                <h3 class="memory-title">Kencan Pertama</h3>
-                <p class="memory-text">Nervous tapi bahagia. Kita berjalan di taman, tertawa bersama, dan aku jatuh cinta pada senyumanmu.</p>
+                <div class="memory-image">
+                    <img src="images/foto2.jpg" alt="Kencan pertama" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">Meyy with Flower</h3>
+                <p class="memory-text">liatt seneng banget dia sama bunganya dipegang terus tuhh tajut hilang yah kakk xixixi</p>
             </div>
+
             <div class="memory-card">
-                <div class="memory-image">🌅</div>
-                <h3 class="memory-title">Liburan Berdua</h3>
-                <p class="memory-text">Petualangan pertama kita bersama. Melihat sunrise, foto candid, dan janji untuk selalu bersama.</p>
+                <div class="memory-image">
+                    <img src="images/foto33.jpg" alt="Moment spesial" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">Reality Club Concert</h3>
+                <p class="memory-text">Hari dimana suara kita hampir abis karena kita sing a long lagunya reality club ahahahahaha</p>
             </div>
+
             <div class="memory-card">
-                <div class="memory-image">🎭</div>
-                <h3 class="memory-title">Momen Spontan</h3>
-                <p class="memory-text">Tawa lepas di tengah hujan, dance konyol di dapur, semua moment kecil yang jadi kenangan besar.</p>
+                <div class="memory-image">
+                    <img src="images/foto4.jpg" alt="Our Adventure" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">Sooo Cuteeee Picture</h3>
+                <p class="memory-text">Barusan dia bilang kalo foto ini jelek hihh padahal lucuu tauuuu </p>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="images/foto5.jpg" alt="Our Adventure" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">First Tracking</h3>
+                <p class="memory-text">dengan segala kecapekanya dia lebih memilih putar balik hahahaha </p>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="images/foto7.jpg" alt="Our Adventure" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">Uffy 21</h3>
+                <p class="memory-text">Halo adek yang baru umur 21 kakak udah duluan nih</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="images/foto8.jpg" alt="Our Adventure" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">End Game Part 2</h3>
+                <p class="memory-text">Thanossss Kembali menyerang bumi !!!!!!!</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="images/foto9.jpg" alt="Our Adventure" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">Emeyy pipop</h3>
+                <p class="memory-text">popipopipopopipop popipopipopopipop......</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="images/foto10.jpg" alt="Our Adventure" onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                </div>
+                <h3 class="memory-title">The Real Bokem</h3>
+                <p class="memory-text">Aloooo nama atu emeyyy</p>
             </div>
         </div>
     </section>
@@ -599,15 +679,14 @@
     <section id="message" class="message-section">
         <div class="message-container">
             <div class="message-content">
-                <h2 class="message-title">Untuk Cintaku</h2>
+                <h2 class="message-title">Dear Meyy</h2>
                 <p class="love-message-text">
-                    Di hari istimewa ini, aku ingin kamu tahu betapa berharganya kehadiranmu dalam hidupku. 
-                    Setiap hari bersamamu adalah anugerah, setiap senyuman yang kau berikan adalah kebahagiaan, 
-                    dan setiap pelukan darimu adalah rumah bagiku.
+                    Happy Birthdayyyy Sayanggg Selamat menempuh umur ke 21 tahun yahhhh......
+                    Semoga hari ini menjadi awal dari petualangan baru yang penuh kebahagiaan dan keberhasilan yah embullll.......
                 </p>
                 <p class="love-message-text">
                     Semoga tahun baru dalam hidupmu dipenuhi dengan cinta, tawa, kebahagiaan, dan semua hal 
-                    indah yang kamu impikan. Aku berjanji akan selalu ada di sisimu, dalam suka maupun duka.
+                    and jangan suka mayah mayah yah sayangg hihihihihi.
                 </p>
                 <p class="love-message-text" style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #ff6b9d;">
                     I Love You Beyond Words 💕
@@ -622,7 +701,6 @@
     </audio>
     <audio id="voiceMessage">
         <source src="Voice_Note.mp3" type="audio/mpeg">
-        <!-- Upload file voice message kalian -->
     </audio>
     
     <script>
